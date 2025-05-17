@@ -22,20 +22,30 @@ Here is a complete, improved Python Updater App with the following features:
 Install these packages if you haven't:
 `pip install requests tqdm`
 
-## Updater.py file
-
-Check `Updater.py` file for Source Code
-
 ## 🧪 To Use It:
 <ol>
   <li>Replace GITHUB_ZIP_URL with your actual download URL.</li>
     If Your use ower testing zip this is the url for it
         https://github.com/jbsoftboxweb/python_updater/releases/download/tesing/updater.zip
-  <li>Put this script in an updates/ folder next to your main app.</li>
-  <li>From your main app, run this updater script using:</li>
+  <li>Put main soruce code into your main.py file</li>
+  <li>Make sure your updater file and main file stay in same folder</li>
+  <li>From your main app, run this updater script</li>
 </ol>
+
+## Updater.py file
+
+Check `Updater.py` file for Source Code
 
 ## Main.py file
 In your main app (e.g., main.py), call the updater before quitting:
 
 Check `Main.py` file for Source Code
+
+## file driectry
+../folder
+<ul>
+  <li>|_ main.py/(main.exe)</li>
+  <li>|_ updater.py/(updater.exe)</li>
+  <li>|_ _your other files_</li>
+</ul>
+
