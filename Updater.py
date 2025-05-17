@@ -4,17 +4,10 @@ import requests, zipfile, io, os, shutil, sys, psutil
 import subprocess
 
 # ======= CONFIG ========
-GITHUB_ZIP_URL = "https://github.com/username/repo/releases/latest/download/update.zip"
-APP_DIR = os.path.abspath("..")  # Folder of main app
+GITHUB_ZIP_URL = "https://github.com/jbsoftboxweb/python_updater/releases/download/tesing/updater.zip"
+APP_DIR = os.path.abspath("")  # Folder of main app
 TEMP_DIR = "temp_update"
-MAIN_APP_PROCESS_NAME = "main.exe"  # Change this to your real main app name
 # =======================
-
-def kill_main_app():
-    """Kill running main app before update"""
-    for proc in psutil.process_iter(['name']):
-        if proc.info['name'] and MAIN_APP_PROCESS_NAME in proc.info['name']:
-            proc.kill()
 
 def download_with_progress(url, dest_label, progress_bar):
     """Download file with progress bar"""
@@ -35,6 +28,7 @@ def download_with_progress(url, dest_label, progress_bar):
             root.update_idletasks()
 
     buffer.seek(0)
+    print("download")
     return buffer
 
 def extract_and_replace(zip_data):
@@ -51,10 +45,11 @@ def extract_and_replace(zip_data):
 
         for file in files:
             shutil.copy2(os.path.join(root_dir, file), os.path.join(target_dir, file))
+        
+        print("Replace")
 
 def start_update():
     try:
-        kill_main_app()
         status_label.config(text="Preparing to download...")
         zip_data = download_with_progress(GITHUB_ZIP_URL, status_label, progress)
         status_label.config(text="Extracting files...")
