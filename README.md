@@ -29,6 +29,8 @@ Check `Updater.py` file for Source Code
 ## 🧪 To Use It:
 <ol>
   <li>Replace GITHUB_ZIP_URL with your actual download URL.</li>
+    If Your use ower testing zip this is the url for it
+        https://github.com/jbsoftboxweb/python_updater/releases/download/tesing/updater.zip
   <li>Put this script in an updates/ folder next to your main app.</li>
   <li>From your main app, run this updater script using:</li>
 </ol>
