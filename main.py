@@ -1,4 +1,4 @@
-import subprocess
+import subprocess, sys
 
 subprocess.Popen(["python", "updates/updater.py"])
 sys.exit()  # close main app
